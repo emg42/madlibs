@@ -50,6 +50,9 @@ def show_madlib_form():
         return render_template("compliment.html")
     else:
         return render_template("goodbye.html")
+
+# @app.rout('/madlibs')
+
     
 if __name__ == '__main__':
     # Setting debug=True gives us error messages in the browser and also
