@@ -44,13 +44,13 @@ def greet_person():
 @app.route('/game')
 def show_madlib_form():
     """Ask user if they would like to play a game"""
-    <label for="play-game">Would you like to play a game?</label>
+    play_game = request.args.get("play-game")
 
-    <input type="radio" name="play-game">Yes</input>
-    <label name="play-game" value="yes"></label>
-
-    <input type="radio" name="play-game">No</input>
-    <label name="play-game" value="no"></label>
+    if play_game == "yes":
+        return render_template("compliment.html")
+    else:
+        return render_template("goodbye.html")
+    
 if __name__ == '__main__':
     # Setting debug=True gives us error messages in the browser and also
     # "reloads" our web app if we change the code.
